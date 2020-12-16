@@ -1,0 +1,58 @@
+.pagination {
+  margin-bottom: 10px;
+  padding-top: 13px;
+
+  &__row {
+    display: flex;
+  }
+
+  &__page-current {
+    font-family: $labelTextFont;
+    font-size: $labelTextFontSize;
+    font-weight: $wigetTitleFontWeight;
+    color: $dark-50;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    padding-top: 13px;
+    background: linear-gradient(180deg, $purple 0%, #8ba4f9 100%);
+    color: #fff;
+    border-radius: 22px;
+  }
+
+  &__page {
+    font-family: $bodyTextFont;
+    font-size: $labelTextFontSize;
+    font-weight: $bodyTextFontFontWeight;
+    color: $dark-50;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    padding-top: 13px;
+    border-radius: 22px;
+    cursor: pointer;
+  }
+
+  &__arrow {
+    font-family: $labelTextFont;
+    font-size: $labelTextFontSize;
+    font-weight: $wigetTitleFontWeight;
+    color: #fff;
+    background: linear-gradient(180deg, $green 0%, #66d2ea 100%);
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    padding-top: 13px;
+    border-radius: 22px;
+    cursor: pointer;
+  }
+
+  &__description {
+    font-family: $bodyTextFont;
+    font-weight: $bodyTextFontFontWeight;
+    font-size: $bodyTextFontSize;
+    color: $dark-75;
+    padding-left: 6px;
+    padding-top: 12px;
+  }
+}

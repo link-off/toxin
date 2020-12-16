@@ -1,0 +1,70 @@
+.guide-type {
+  margin-top: 30px;
+  display: flex;
+
+  &-h1 {
+    font-family: $bodyTextFont;
+    font-size: $wigetTitleFontSize;
+    font-weight: $bodyTextFontFontWeight;
+  }
+
+  &-h2 {
+    font-family: $bodyTextFont;
+    font-size: $insideWigetsFontSize;
+    font-weight: $bodyTextFontFontWeight;
+  }
+
+  &-h3 {
+    font-family: $bodyTextFont;
+    font-size: $labelTextFontSize;
+    font-weight: $bodyTextFontFontWeight;
+  }
+
+  &-body {
+    font-family: $bodyTextFont;
+    font-size: $bodyTextFontSize;
+    font-weight: $bodyTextFontFontWeight;
+  }
+
+  &__aside {
+    color: $dark-25;
+    width: 37px;
+    text-transform: capitalize;
+    text-align: right;
+  }
+
+  &__content {
+    flex: 1;
+    padding-left: 30px;
+    padding-bottom: 50px;
+  }
+
+  &__description {
+    color: $dark-100;
+  }
+
+  &-h1 &__description {
+    font-size: $wigetTitleFontSize;
+    font-family: $wigetTitleFont;
+    font-weight: $wigetTitleFontWeight;
+  }
+
+  &-h2 &__description {
+    font-size: $insideWigetsFontSize;
+    font-family: $wigetTitleFont;
+    font-weight: $wigetTitleFontWeight;
+  }
+
+  &-h3 &__description {
+    font-size: $labelTextFontSize;
+    font-family: $labelTextFont;
+    font-weight: $wigetTitleFontWeight;
+  }
+
+  &-body &__description {
+    font-family: $bodyTextFont;
+    font-size: $bodyTextFontSize;
+    font-weight: $bodyTextFontFontWeight;
+    color: $dark-75;
+  }
+}

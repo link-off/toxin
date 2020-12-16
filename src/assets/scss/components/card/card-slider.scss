@@ -1,0 +1,48 @@
+.card-slider {
+  overflow: hidden;
+  height: 152px;
+  position: relative;
+  border-radius: 4px 4px 0 0;
+
+  &__img {
+    width: 269px;
+    height: 152px;
+    background-position: center;
+  }
+
+  &__wrapper {
+    position: absolute;
+    display: flex;
+    right: 0;
+    bottom: 0;
+    padding-right: 16px;
+  }
+
+  &__arrow {
+    position: absolute;
+    height: 100%;
+    width: 42px;
+    cursor: pointer;
+
+    svg {
+      height: 14px;
+      width: 14px;
+      position: absolute;
+      top: 50%;
+      margin-top: -7px;
+    }
+
+    &_left {
+      svg {
+        left: 15px;
+      }
+    }
+
+    &_right {
+      right: 0;
+      svg {
+        right: 8px;
+      }
+    }
+  }
+}

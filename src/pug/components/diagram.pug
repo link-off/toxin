@@ -1,0 +1,74 @@
+mixin diagram(options)
+  -
+    var partDivider = 0.008
+    var total = options.total
+    var w = options.width || 120
+    var h = options.height || 120
+    var strokeWidth = 4
+    var r = w / 2 - strokeWidth / 2
+    var length = 2 * 3.14 * r
+    var GRADIENTS = ['url(#diagram_yellow)', 'url(#diagram_green)', 'url(#diagram_blue)', 'url(#diagram_black)']
+
+  .diagram
+    .diagram__gradients
+      svg
+        defs
+          lineargradient#diagram_yellow(x1='60' y1='1' x2='60' y2='121' gradientunits='userSpaceOnUse')
+            stop(stop-color='#FFE39C')
+            stop(offset='1' stop-color='#FFBA9C')
+          lineargradient#diagram_green(x1="5" y1="0" x2="5" y2="10" gradientunits='userSpaceOnUse')
+            stop(stop-color='#66D2EA')
+            stop(offset='1' stop-color='#6FCF97')  
+          lineargradient#diagram_blue(x1='-1' y1='0' x2='-1' y2='120' gradientunits='userSpaceOnUse')
+            stop(stop-color='#BC9CFF')
+            stop(offset='1' stop-color='#8BA4F9')  
+          lineargradient#diagram_black(x1='5' y1='0' x2='5' y2='10' gradientunits='userSpaceOnUse')
+            stop(stop-color='#919191')
+            stop(offset='1' stop-color='#3D4975')  
+    figure
+      .diagram__figure-content
+        svg.diagram__donut(width=w height=h viewBox=`0 0 ${ w } ${ h }` role='img')
+          - var dashoffset = 0
+          - var dashoffsetFirst = 0
+          for item, index in options.data
+            - var prevPart = index ? options.data[index - 1].count / total : 0;
+            - var part = item.count / total;
+            - var dasharray = `${part * length} ${(1 - part) * length}`
+            - var dasharrayDivider = `${partDivider * length} ${(1 - partDivider) * length}`
+            - dashoffset += index ? - prevPart * length : length * 0.25
+            - console.log(dashoffset)
+            if item.count > 0
+              circle.diagram__segment(
+                cx='50%' cy='50%' r=r fill='transparent' stroke=GRADIENTS[index] stroke-width=strokeWidth transform=`translate(${w}, 0) scale(-1, 1)`
+                stroke-dasharray=dasharray
+                stroke-dashoffset=`${dashoffset}`)
+            if !index
+              - dashoffsetFirst = dashoffset
+            else
+              circle.diagram__segment(
+                cx='50%' cy='50%' r=r fill='transparent' stroke='#ffffff' stroke-width=strokeWidth transform=`translate(${w}, 0) scale(-1, 1)`
+                stroke-dasharray=dasharrayDivider
+                stroke-dashoffset=`${dashoffset + partDivider * length / 2}`)
+            if index == options.data.length - 1
+              circle.diagram__segment(
+                  cx='50%' cy='50%' r=r fill='transparent' stroke='#ffffff' stroke-width=strokeWidth transform=`translate(${w}, 0) scale(-1, 1)`
+                  stroke-dasharray=dasharrayDivider
+                  stroke-dashoffset=`${dashoffsetFirst + partDivider * length / 2}`)
+        .diagram__chart-text
+          .diagram__chart-number= options.total
+          .diagram__chart-label
+            | ГОЛОСОВ
+      figcaption.diagram__figure-key
+        ul.diagram__figure-key-list(aria-hidden='true' role='presentation')
+          li.diagram__shape-text
+            span.diagram__shape-circle.diagram__shape-yellow
+            |  Великолепно
+          li.diagram__shape-text
+            span.diagram__shape-circle.diagram__shape-green
+            |  Хорошо
+          li.diagram__shape-text
+            span.diagram__shape-circle.diagram__shape-purple
+            |  Удовлетворительно
+          li.diagram__shape-text
+            span.diagram__shape-circle.diagram__shape-black
+            |  Разочарован

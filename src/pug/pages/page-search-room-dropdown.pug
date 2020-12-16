@@ -1,0 +1,174 @@
+extends ../components/layout
+
+include ../components/logo
+include ../components/navigation
+include ../components/header
+include ../components/footer
+include ../components/form/subscription-text-field
+include ../components/copyright
+include ../components/social-icon
+include ../components/section
+include ../components/form/group-wrapper
+include ../components/field-wrapper
+include ../components/form/button
+include ../components/form/rate
+include ../components/form/pagination
+include ../components/form/filter-date-dropdown
+include ../components/form/dropdown
+include ../components/form/range-slider
+include ../components/form/checkbox
+include ../components/form/expandable-checkbox-list
+include ../components/card/card
+
+
+
+
+
+block variables
+  - var title = 'Page Search Room Preferences Dropdown';
+  - var description = 'page-search-room-dropdown';
+  - var pageClass = 'page-search-room-dropdown';
+
+block content
+  +section({isShadow: true})
+    +header({isNotAuth: true, isAuth: false, user: 'юлий цезарь', isHomePage: true}) 
+  +section({className: `${pageClass}__border padding-b-75`})  
+    div(class = `${pageClass}__container`)
+      .page-search-room__room-filter
+        +field-wrapper({
+          className: 'margin-t-30',
+          title: 'даты пребывания в отеле', 
+          description: ''})
+          +filter-date-dropdown({
+            isOpen: false, 
+            placeholder: '19 авг - 23 авг',
+            values: [
+              {id: 1, name: 'спальни', count: 2}, 
+              {id: 2, name: 'кровати', count: 1}, 
+              {id: 3, name: 'вынные комнаты', count: 0}]}) 
+        +field-wrapper({className: 'margin-t-20', title: 'гости', description: ''})
+          +dropdown({
+            isOpen: false, 
+            isShowActions: true,
+            isClearable: true, 
+            placeholder: '3 гостя, 1 младенец', 
+            values: [
+              {id: 1, name: 'взрослые', count: 2}, 
+              {id: 2, name: 'дети', count: 0}, 
+              {id: 3, name: 'младенцы', count: 1}]}) 
+        +range-slider({className: 'margin-t-30', name: 'диапазон цены', value: '5 000Р - 10 000Р', isDescription: true, description: 'Cтоимость за сутки пребывания в номере'})
+        +field-wrapper({className: 'margin-t-30', title: 'правила дома', isHeadIndent: true})
+          +checkbox({className: `${pageClass}__checkbox-wrapper`, id: 'checkbox_buttons_0_1', name: 'можно курить', isChecked: false})
+          +checkbox({className: `${pageClass}__checkbox-wrapper`, id: 'checkbox_buttons_0_2', name: 'можно с питомцами', isChecked: true})
+          +checkbox({className: `${pageClass}__checkbox-wrapper`, id: 'checkbox_buttons_0_3', name: 'можно пригласить гостей (до 10 человек)', isChecked: true})
+        +field-wrapper({className: 'margin-t-30', title: 'доступность', isHeadIndent: true})
+          +checkbox({id: 'rich_checkbox_buttons_0_1', name: 'широкий коридор', isRich: true, isChecked: false, description: 'Ширина коридоров в номере не менее 91 см.'})
+          +checkbox({id: 'rich_checkbox_buttons_0_2', name: 'помощник для инвалидов', isRich: true, isChecked: false, description: 'На 1 этаже вас встретит специалист и проводит до номера.'})  
+        +field-wrapper({
+          title: 'удобства номера', 
+          description: '', 
+          className: 'margin-t-30'})
+          +dropdown({
+            isOpen: true, 
+            isShowActions: false, 
+            placeholder: '2 спальни, 2 кровати...',
+            values: [
+              {id: 1, name: 'спальни', count: 2}, 
+              {id: 2, name: 'кровати', count: 2}, 
+              {id: 3, name: 'вынные комнаты', count: 0}]})
+        +expandable-checkbox-list({
+          isOpen: false,
+          name: 'дополнительные удобства',
+          className: 'margin-t-20',
+          values: [
+            {id: 'expandable_checkbox_list_0_1', name: 'завтрак', isChecked: false}, 
+            {id: 'expandable_checkbox_list_0_2', name: 'письменный стол', isChecked: true}, 
+            {id: 'expandable_checkbox_list_0_3', name: 'стул для кормления', isChecked: true}, 
+            {id: 'expandable_checkbox_list_0_4', name: 'кроватка', isChecked: true},
+            {id: 'expandable_checkbox_list_0_5', name: 'телевизор', isChecked: false},
+            {id: 'expandable_checkbox_list_0_6', name: 'шампунь', isChecked: false}
+            ]})        
+      .page-search-room__room-cards
+        .page-search-room__head-wrapper
+          svg.page-search-room__filter-button(xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 0 24 24' width='24')
+            path(d='M0 0h24v24H0z' fill='none')
+            path(d='M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z')
+          h1(class = `${pageClass}__head margin-b-20 margin-t-30`) Номера, которые мы для вас подобрали
+        .page-search-room__content-wrapper
+          +card({className: 'margin-b-20', isLux: true, isActive: true, feedback: '145', images: [
+            {alt: 'hotel room', src: '../../../assets/img/room888.jpg'},
+            {alt: 'hotel room', src: '../../../assets/img/room888.jpg'},
+            {alt: 'hotel room', src: '../../../assets/img/room888.jpg'},
+            {alt: 'hotel room', src: '../../../assets/img/room888.jpg'}
+          ]})
+          +card({className: 'margin-b-20', number: '840', price: '9900', isActive: false, rate: 4, feedback: '65', images: [
+            {alt: 'hotel room', src: '../../../assets/img/room840.jpg'},
+            {alt: 'hotel room', src: '../../../assets/img/room840.jpg'},
+            {alt: 'hotel room', src: '../../../assets/img/room840.jpg'},
+            {alt: 'hotel room', src: '../../../assets/img/room840.jpg'}
+          ]})
+          +card({className: 'margin-b-20', number: '980', isLux: true, price: '8500', isActive: false, rate: 3, feedback: '35', images: [
+            {alt: 'hotel room', src: '../../../assets/img/room980.jpg'},
+            {alt: 'hotel room', src: '../../../assets/img/room980.jpg'},
+            {alt: 'hotel room', src: '../../../assets/img/room980.jpg'},
+            {alt: 'hotel room', src: '../../../assets/img/room980.jpg'}
+          ]})
+          +card({className: 'margin-b-20', number: '856', isLux: false, price: '7300', isActive: false, rate: 5, feedback: '19', images: [
+            {alt: 'hotel room', src: '../../../assets/img/room856.jpg'},
+            {alt: 'hotel room', src: '../../../assets/img/room856.jpg'},
+            {alt: 'hotel room', src: '../../../assets/img/room856.jpg'},
+            {alt: 'hotel room', src: '../../../assets/img/room856.jpg'}
+          ]})
+          +card({className: 'margin-b-20', number: '740', isLux: false, price: '6000', isActive: false, rate: 4, feedback: '44', images: [
+            {alt: 'hotel room', src: '../../../assets/img/room740.jpg'},
+            {alt: 'hotel room', src: '../../../assets/img/room740.jpg'},
+            {alt: 'hotel room', src: '../../../assets/img/room740.jpg'},
+            {alt: 'hotel room', src: '../../../assets/img/room740.jpg'}
+          ]})
+          +card({className: 'margin-b-20', number: '982', isLux: false, price: '5800', isActive: false, rate: 3, feedback: '56', images: [
+            {alt: 'hotel room', src: '../../../assets/img/room982.jpg'},
+            {alt: 'hotel room', src: '../../../assets/img/room982.jpg'},
+            {alt: 'hotel room', src: '../../../assets/img/room982.jpg'},
+            {alt: 'hotel room', src: '../../../assets/img/room982.jpg'}
+          ]})
+          +card({className: 'margin-b-20', number: '678', isLux: false, price: '5500', isActive: false, rate: 5, feedback: '45', images: [
+            {alt: 'hotel room', src: '../../../assets/img/room678.jpg'},
+            {alt: 'hotel room', src: '../../../assets/img/room678.jpg'},
+            {alt: 'hotel room', src: '../../../assets/img/room678.jpg'},
+            {alt: 'hotel room', src: '../../../assets/img/room678.jpg'}
+          ]})
+          +card({className: 'margin-b-20', number: '450', isLux: false, price: '5300', isActive: false, rate: 4, feedback: '39', images: [
+            {alt: 'hotel room', src: '../../../assets/img/room450.jpg'},
+            {alt: 'hotel room', src: '../../../assets/img/room450.jpg'},
+            {alt: 'hotel room', src: '../../../assets/img/room450.jpg'},
+            {alt: 'hotel room', src: '../../../assets/img/room450.jpg'}
+          ]})
+          +card({className: 'margin-b-20', number: '350', isLux: false, price: '5000', isActive: false, rate: 3, feedback: '77', images: [
+            {alt: 'hotel room', src: '../../../assets/img/room350.jpg'},
+            {alt: 'hotel room', src: '../../../assets/img/room350.jpg'},
+            {alt: 'hotel room', src: '../../../assets/img/room350.jpg'},
+            {alt: 'hotel room', src: '../../../assets/img/room350.jpg'}
+          ]})
+          +card({number: '666', isLux: false, price: '5000', isActive: false, rate: 5, feedback: '25', images: [
+            {alt: 'hotel room', src: '../../../assets/img/room666.jpg'},
+            {alt: 'hotel room', src: '../../../assets/img/room666.jpg'},
+            {alt: 'hotel room', src: '../../../assets/img/room666.jpg'},
+            {alt: 'hotel room', src: '../../../assets/img/room666.jpg'}
+          ]})
+          +card({number: '444', isLux: false, price: '5000', isActive: false, rate: 4, feedback: '15', images: [
+            {alt: 'hotel room', src: '../../../assets/img/room444.jpg'},
+            {alt: 'hotel room', src: '../../../assets/img/room444.jpg'},
+            {alt: 'hotel room', src: '../../../assets/img/room444.jpg'},
+            {alt: 'hotel room', src: '../../../assets/img/room444.jpg'}
+          ]})
+          +card({number: '352', isLux: false, price: '5000', isActive: false, rate: 3, feedback: '55', images: [
+            {alt: 'hotel room', src: '../../../assets/img/room352.jpg'},
+            {alt: 'hotel room', src: '../../../assets/img/room352.jpg'},
+            {alt: 'hotel room', src: '../../../assets/img/room352.jpg'},
+            {alt: 'hotel room', src: '../../../assets/img/room352.jpg'}
+          ]})
+        +pagination({className: `${pageClass}__pagination-wrapper margin-t-40`, description: '1 – 12 из 100+ вариантов аренды'})  
+  +section()
+    +footer()
+  +section({isLine: true, isShadow: true})  
+    +copyright()     

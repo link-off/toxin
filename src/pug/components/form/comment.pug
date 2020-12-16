@@ -1,0 +1,15 @@
+mixin comment(options)
+  -
+    var componentClassName = 'comment'
+    componentClassName += options.className ? ' ' + options.className : ''
+  div(class= componentClassName)
+    div
+      .comment__avatar(alt=options.image.alt  style=`background-image: url(${options.image.src});`)
+    div
+      .comment__name= options.name
+      .comment__date= options.date
+    div 
+      .comment__like
+        +like({count: options && options.count || 12, isLiked: options && options.isLiked})
+    div
+      .comment__text= options.text

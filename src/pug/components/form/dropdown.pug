@@ -1,0 +1,25 @@
+include ./dropdown/option
+
+mixin dropdown(options)
+  -
+    var baseClassName = 'dropdown'
+    var componentClassName = baseClassName
+    componentClassName += options.isOpen ? ' ' + baseClassName + '_open': ''
+    componentClassName += options.className ? ' ' + options.className : ''
+  div(class= componentClassName)
+    .dropdown__wrapper
+      .dropdown__trigger
+        .dropdown__placeholder= options.placeholder
+        .dropdown__arrow 
+          svg(width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg')
+            path(d='M10.5938 0.578125L12 1.98438L6 7.98438L0 1.98438L1.40625 0.578125L6 5.17188L10.5938 0.578125Z' fill='#1F2041')
+      .dropdown__options
+        if options.values && options.values.length > 0
+          .dropdown__options-wrapper
+            for value in options.values 
+              +option({value})
+          if options.isShowActions
+            .dropdown__actions
+              if options.isClearable
+                button.dropdown__button= 'Очистить'
+              button.dropdown__button.dropdown__button_accept= 'Применить'   

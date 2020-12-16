@@ -1,0 +1,31 @@
+.counter {
+  display: grid;
+  grid-template-columns: 30px 32px 30px;
+  padding-top: 7px;
+  text-align: center;
+
+  &__value {
+    font-family: $labelTextFont;
+    font-size: $labelTextFontSize;
+    font-weight: $wigetTitleFontWeight;
+    padding-top: 7px;
+  }
+
+  &__control {
+    font-family: $bodyTextFont;
+    font-size: $insideWigetsFontSize;
+    font-weight: $bodyTextFontFontWeight;
+    color: $dark-50;
+    border: 1px solid $dark-25;
+    box-sizing: border-box;
+    border-radius: 22px;
+    height: 30px;
+    width: 30px;
+    padding-top: 3px;
+  }
+
+  &__control_deactivated {
+    color: $dark-25;
+    border: 1px solid $dark-5;
+  }
+}

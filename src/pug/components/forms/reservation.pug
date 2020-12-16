@@ -1,0 +1,37 @@
+mixin reservation(options)
+  -
+    var componentClassName = 'reservation'
+    componentClassName += options.className ? ' ' + options.className : ''
+  div(class= componentClassName)
+    +card-header({type: 'title', number: '888', isLux: true, price: options.price})
+    +group-wrapper({className: 'margin-t-20'})
+      +field-wrapper({title: 'прибытие'})
+        +date-dropdown({isOpen: false, placeholder: '19.08.2019'})  
+      +field-wrapper({title: 'выезд'})
+        +date-dropdown({isOpen: false, placeholder: '23.08.2019'})       
+    +field-wrapper({title: 'гости', description: '', className: 'margin-t-20'})
+      +dropdown({
+        isOpen: false, 
+        isShowActions: true,
+        isClearable: true, 
+        placeholder: '3 гостя'})
+    .margin-t-20    
+      ul.reservation__price-list
+        li
+          .reservation__description= options.price + '₽ х 4 суток'
+          div
+          div= '39 960₽'
+        li.margin-t-10
+          .reservation__description='Сбор за услуги: скидка ' + options.discount + '₽'
+          .reservation__icon= 'i'
+          div=options.fee + '₽'
+        li.margin-t-10
+          .reservation__description='Сбор за дополнительные услуги'
+          .reservation__icon= 'i'
+          div= options.additionalServices + '₽'
+        li.reservation__total.margin-t-30
+          .reservation__description
+            span итого
+          div= '38 081₽'      
+      .margin-t-20     
+        +button({value: 'забронировать', type: 'arrowed'})              

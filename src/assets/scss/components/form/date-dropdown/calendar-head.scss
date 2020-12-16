@@ -1,0 +1,28 @@
+.calendar-head {
+  display: grid;
+  grid-template-columns: 21px auto 21px;
+  padding-bottom: 31px;
+
+  &__value {
+    font-family: $wigetTitleFont;
+    font-size: $insideWigetsFontSize;
+    font-weight: $wigetTitleFontWeight;
+    line-height: $bodyTextFontLineHeight;
+    color: $dark-100;
+    text-transform: capitalize;
+    text-align: center;
+  }
+
+  &__arrow {
+    cursor: pointer;
+
+    &:hover svg {
+      opacity: 0.5;
+    }
+
+    svg {
+      height: 17px;
+      width: 18px;
+    }
+  }
+}

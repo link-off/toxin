@@ -1,0 +1,13 @@
+mixin card-header(options)
+  -
+    var numberClassName = options && options.type == 'title' ? 'card-header__number card-header__number_title' : 'card-header__number'
+  +group-wrapper({className: 'card-header'})
+    div
+      h1(class=numberClassName)
+        span №
+        span= options.number
+        if options && options.isLux
+          .card-header__luxury люкс
+    .card-header__price-block
+      span.card-header__price= options.price + '₽'
+      span.card-header__day= 'в сутки'

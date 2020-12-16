@@ -1,0 +1,119 @@
+.guide-form-elements {
+  &__container {
+    display: grid;
+    grid-template-columns: 320px 374px 320px;
+    padding: 92px 141px 131px 140px;
+    grid-column-gap: 72px;
+
+    & > div:nth-child(2),
+    & > div:nth-child(5) {
+      margin-left: 54px;
+    }
+  }
+
+  &__wrapper {
+    margin-right: 54px;
+  }
+
+  &__offset-masked-text-field {
+    margin-top: 22px;
+  }
+
+  &__offset-expandale-checbox-list {
+    margin-top: 158px;
+  }
+
+  &__offset-expandale-checbox-list-open {
+    margin-top: 20px;
+  }
+
+  &__offset-buttons > * + * {
+    margin-top: 10px;
+    margin-bottom: 41px;
+  }
+
+  &__checkbox-wrapper-class {
+    padding-right: 52px;
+  }
+
+  &__radio-wrapper {
+    padding-right: 99px;
+    margin-bottom: 35px;
+    margin-top: 44px;
+  }
+
+  &__offset-radio {
+    padding-top: 11px;
+  }
+
+  &__offset-toggle {
+    padding-top: 12px;
+  }
+
+  &__offset-like {
+    margin-top: 46px;
+  }
+
+  &__offset-wrapper {
+    padding-right: 50px;
+  }
+
+  &__rate-buttons-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 10px;
+  }
+
+  &__offset-dropdown {
+    margin-top: 198px;
+  }
+
+  &__offset-rich-checbox-buttons {
+    margin-top: 256px;
+  }
+
+  &__offset-range-slider {
+    margin-right: 54px;
+  }
+
+  &__buttons-wrapper {
+    margin-top: 43px;
+  }
+
+  &__offset-buttons-between-outline {
+    margin-bottom: 16px;
+  }
+
+  &__offset-buttons-between-default {
+    margin-bottom: 15px;
+  }
+
+  &__buttons-between {
+    margin-bottom: 30px;
+  }
+
+  &__offset-pagination {
+    margin-bottom: 236px;
+  }
+
+  &__offset-bullet-list {
+    margin-top: 256px;
+    padding-right: 66px;
+  }
+
+  &__offset-advanages {
+    margin-top: 100px;
+  }
+
+  &__offset-comment {
+    margin-top: 112px;
+  }
+
+
+
+  
+
+  &_offset-rate {
+    margin-top: 52px;
+  }
+}

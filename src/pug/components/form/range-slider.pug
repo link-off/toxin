@@ -1,0 +1,18 @@
+mixin range-slider(options)
+  -
+    var componentClassName = 'range-slider'
+    componentClassName = options.className ? ' ' + options.className : ''
+    componentClassName += options.isDescription ? ' ' + componentClassName + '_desc': ''
+  div(class= componentClassName)
+    .range-slider__wrapper
+      .range-slider__name= options.name
+      .range-slider__value= options.value
+    input.range-slider__input(type='range' min='0' max='100' value='5')
+    input.range-slider__input(type='range' min='0' max='100' value='75')
+    .range-slider__slider
+      .range-slider__track
+      .range-slider__range
+      .range-slider__thumb.range-slider__thumb_left
+      .range-slider__thumb.range-slider__thumb_right
+    if options.description
+      .range-slider__description= options.description  

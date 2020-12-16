@@ -1,0 +1,68 @@
+.card-header {
+  min-height: 24px;
+
+  & > * {
+    @include centered();
+    justify-content: flex-start;
+
+    &:last-child {
+      justify-content: flex-end;
+    }
+  }
+
+  &__number {
+    display: inline-block;
+    font-family: $labelTextFont;
+    font-weight: $wigetTitleFontWeight;
+    font-size: $bodyTextFontSize;
+    line-height: $elementLineHeight;
+    color: $dark-100;
+
+    & > span:first-child {
+      margin-right: 5px;
+    }
+
+    &_title {
+      font-size: $wigetTitleFontSize;
+      line-height: $wigetTitleLineHeight;
+
+      & > span:first-child {
+        font-size: $bodyTextFontSize;
+        line-height: $elementLineHeight;
+      }
+    }
+  }
+
+  &__luxury {
+    display: inline-block;
+    font-family: $labelTextFont;
+    font-weight: $wigetTitleFontWeight;
+    font-size: $labelTextFontSize;
+    line-height: $labelTextFontLineHeight;
+    color: $purple;
+    margin-left: 5px;
+    text-transform: uppercase;
+  }
+
+  &__price-block {
+    margin-right: 1px;
+    margin-top: 4px;
+  }
+
+  &__price {
+    font-family: $labelTextFont;
+    font-weight: $wigetTitleFontWeight;
+    font-size: $bodyTextFontSize;
+    line-height: $elementLineHeight;
+    color: $dark-50;
+  }
+
+  &__day {
+    font-family: $bodyTextFont;
+    font-weight: $bodyTextFontFontWeight;
+    font-size: $labelTextFontSize;
+    line-height: $elementLineHeight;
+    color: $dark-50;
+    margin-left: 5px;
+  }
+}

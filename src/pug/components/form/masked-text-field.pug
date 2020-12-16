@@ -1,0 +1,7 @@
+mixin masked-text-field(options)
+  -
+    var componentClassName = 'masked-text-field'
+    componentClassName += options.isHover ? ' ' + componentClassName + '-hover': ''
+    componentClassName += options.className ? ' ' + options.className : ''
+  div(class= componentClassName)
+    input.masked-text-field__input(type='text' placeholder= options.placeholder)

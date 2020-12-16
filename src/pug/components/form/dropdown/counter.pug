@@ -1,0 +1,9 @@
+mixin counter(options)
+  -
+    var controlClassName = 'counter__control'
+    var minusClassName = controlClassName
+    minusClassName += options.value <= 0 ? ' ' + controlClassName + '_deactivated' : ''
+  .counter
+      div(class=minusClassName)= '-'
+      .counter__value= options.value
+      .counter__control= '+'

@@ -1,0 +1,28 @@
+.guide-headers-footers {
+  background-color: #e5e5e5;
+
+  &__container {
+    margin-bottom: 58px;
+  }
+
+  &__mobile {
+    padding-top: 40px;
+
+    & > * {
+      width: 768px;
+      margin: 0 auto !important;
+      
+      @include phone {
+        width: auto;
+      }
+    }
+  }
+  &__mobile + &__mobile {
+    padding-top: 0;
+    padding-bottom: 104px;
+
+    & > * {
+      box-shadow: 0px 10px 20px $dark-5;
+    }
+  }
+}

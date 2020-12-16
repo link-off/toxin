@@ -1,0 +1,11 @@
+mixin images(options)
+  -
+    var componentClassName = 'images'
+    componentClassName += options.className ? ' ' + options.className : ''
+  div(class= componentClassName)
+    div(class= `${componentClassName}__image`)
+      img(src= options.images[0].src)
+      - options.images.shift()
+    div(class= `${componentClassName}__wrapper`)
+      for image, index in options.images
+        img(src= image.src)

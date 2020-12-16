@@ -1,0 +1,16 @@
+mixin section(options)
+  -
+    var baseClassName = 'section'
+    var componentClassName = baseClassName
+    var wrapperClassName = `${baseClassName}__wrapper`
+    componentClassName += (options && options.className) ? ' ' + options.className : ''
+    componentClassName += options && options.isLine ? ` ${baseClassName}_line` : ''
+    componentClassName += options && options.isShadow ? ` ${baseClassName}_shadow` : ''
+    componentClassName += options && options.isTransparent ? ` ${baseClassName}_transparent` : ''
+    componentClassName += options && options.isShadow ? ` ${baseClassName}_shadow` : ''
+    componentClassName += options && options.isCentered ? ` ${baseClassName}_center` : ''
+    wrapperClassName += (options && options.wrapperClassName) ? ' ' + options.wrapperClassName : ''
+  if block
+  section(class= componentClassName)
+    div(class= wrapperClassName)
+      block 

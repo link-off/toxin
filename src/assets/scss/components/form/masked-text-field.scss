@@ -1,0 +1,29 @@
+.masked-text-field {
+  &__input {
+    height: 44px;
+    width: 100%;
+    border: 1px solid $dark-25;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 8px 0px 8px 13px;
+    font-family: $bodyTextFont;
+    font-size: $bodyTextFontSize;
+    font-weight: $bodyTextFontFontWeight;
+    line-height: $insideWigetsLineHeight;
+    color: $dark-25;
+    text-transform: uppercase;
+
+    &:hover,
+    &:focus {
+      border-color: $dark-100;
+    }
+
+    &::placeholder {
+      color: $dark-25;
+    }
+  }
+
+  &-hover input {
+    border-color: $dark-100;
+  }
+}

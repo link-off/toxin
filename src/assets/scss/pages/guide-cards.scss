@@ -1,0 +1,12 @@
+.guide-cards {
+  &__container {
+    display: grid;
+    grid-template-columns: 380px 380px 320px;
+    padding: 102px 140px 140px;
+    grid-column-gap: 40px;
+  }
+
+  &__card-wrapper {
+    margin-right: 49px;
+  }
+}

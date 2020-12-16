@@ -1,0 +1,7 @@
+mixin text-field(options)
+  -
+    var componentClassName = 'text-field'
+    componentClassName += options.isHover ? ' ' + componentClassName + '-hover': ''
+    componentClassName += options.className ? ' ' + options.className : ''
+  div(class= componentClassName)
+    input.text-field__input(type='text' placeholder= options.placeholder value= options.value)

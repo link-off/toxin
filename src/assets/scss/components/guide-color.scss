@@ -1,0 +1,63 @@
+.guide-color {
+  margin-top: 30px;
+  display: flex;
+
+  &-dark-100 {
+    background-color: $dark-100;
+  }
+
+  &-dark-75 {
+    background-color: $dark-75;
+  }
+
+  &-dark-50 {
+    background-color: $dark-50;
+  }
+
+  &-dark-25 {
+    background-color: $dark-25;
+  }
+
+  &-dark-5 {
+    background-color: $dark-5;
+  }
+
+  &-purple {
+    background-color: $purple;
+  }
+
+  &-green {
+    background-color: $green;
+  }
+
+  &__aside {
+    height: 70px;
+    width: 70px;
+    border-radius: 6px;
+  }
+
+  &__content {
+    flex: 1;
+    padding-left: 40px;
+    padding-top: 7px;
+  }
+
+  &__title {
+    font-family: $wigetTitleFont;
+    font-weight: $wigetTitleFontWeight;
+    line-height: $insideWigetsLineHeight;
+    color: $dark-100;
+  }
+
+  &__description {
+    font-family: $bodyTextFont;
+    font-weight: $bodyTextFontFontWeight;
+    line-height: $wigetTitleLineHeight;
+    color: $dark-100;
+    padding-bottom: 33px;
+
+    &:last-child {
+      padding-bottom: 0px;
+    }
+  }
+}

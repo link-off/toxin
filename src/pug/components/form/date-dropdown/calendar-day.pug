@@ -1,0 +1,11 @@
+mixin calendar-day(options)
+  -
+    var baseClassName = 'calendar-day'
+    var componentClassName = baseClassName
+    componentClassName += options.day.isOther ? " " + baseClassName + '_other': ''
+    componentClassName += options.day.isCurrent ? " " + baseClassName + '_current': ''
+    componentClassName += options.day.isBegin ? " " + baseClassName + '_begin': ''
+    componentClassName += options.day.isBeginPoint ? " " + baseClassName + '_begin-point': ''
+    componentClassName += options.day.isEnd ? " " + baseClassName + '_end': ''
+    componentClassName += options.day.isEndPoint ? " " + baseClassName + '_end-point': ''
+  div(class= componentClassName)= options.day.value

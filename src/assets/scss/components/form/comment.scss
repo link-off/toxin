@@ -1,0 +1,46 @@
+.comment {
+  display: grid;
+  grid-template-columns: 58px 653px;
+  font-size: $bodyTextFontSize;
+  color: $dark-75;
+
+  & + & {
+    margin-top: 22px;
+  }
+
+  &__avatar {
+    width: 48px;
+    height: 48px;
+    background-position: 48%;
+  }
+
+  &__name {
+    font-family: $labelTextFont;
+    font-weight: $wigetTitleFontWeight;
+    padding-top: 2px;
+    letter-spacing: -0.03rem;
+  }
+
+  &__date {
+    font-family: $bodyTextFont;
+    font-weight: $bodyTextFontFontWeight;
+    font-size: $bodyTextFontSize;
+    line-height: $bodyTextFontLineHeight;
+    padding-top: 3px;
+    letter-spacing: -0.01rem;
+  }
+  &__text {
+    font-family: $bodyTextFont;
+    font-weight: $bodyTextFontFontWeight;
+    font-size: $bodyTextFontSize;
+    line-height: $bodyTextFontLineHeight;
+    padding-top: 10px;
+  }
+
+  &__like {
+    padding-top: 11px;
+    padding-left: 2px;
+    position: relative;
+    z-index: 1;
+  }
+}

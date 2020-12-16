@@ -1,0 +1,17 @@
+mixin calendar-content(options)
+  .calendar-content
+    .calendar-content__col
+      .calendar-content__week-day= 'пн'
+      .calendar-content__week-day= 'вт'
+      .calendar-content__week-day= 'ср'
+      .calendar-content__week-day= 'чт'
+      .calendar-content__week-day= 'пт'
+      .calendar-content__week-day= 'сб'
+      .calendar-content__week-day= 'вс'
+    .calendar-content__col
+      each item in options.items
+        +calendar-day({day: item})
+      
+                            
+      
+      

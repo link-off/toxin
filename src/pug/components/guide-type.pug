@@ -1,0 +1,8 @@
+mixin guide-type(options)
+  -
+    var componentClassName = 'guide-type'
+    componentClassName += options.titleType ? ' ' + componentClassName + '-' + options.titleType : ''
+  div(class= componentClassName)
+    span.guide-type__aside= options.titleType
+    .guide-type__content
+      .guide-type__description= options.description

@@ -1,0 +1,139 @@
+@mixin current() {
+  font-family: $labelTextFont;
+  font-size: $labelTextFontSize;
+  font-weight: $wigetTitleFontWeight;
+  color: #fff;
+  background: linear-gradient(180deg, $green 0%, #66d2ea 100%);
+  border-radius: 20px;
+  opacity: 1;
+}
+
+.calendar-day {
+  font-family: $bodyTextFont;
+  font-size: $labelTextFontSize;
+  font-weight: $bodyTextFontFontWeight;
+  color: $dark-50;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  padding-top: 13px;
+  cursor: pointer;
+  line-height: 10px;
+
+  &:hover,
+  &.calendar-day_begin-point ~ .calendar-day:hover {
+    @include current();
+  }
+
+  &.calendar-day_begin-point:hover,
+  &.calendar-day_begin-point ~ &.calendar-day_end-point:hover {
+    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+  }
+
+  &_other {
+    color: $dark-25;
+  }
+  &_current {
+    @include current();
+    cursor: default;
+  }
+  &_begin {
+    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+    opacity: 0.25;
+
+    &.calendar-day_begin-point {
+      opacity: 1;
+      position: relative;
+
+      &:before {
+        position: absolute;
+        display: block;
+        content: "";
+        width: 20px;
+        height: 40px;
+        top: 0;
+        right: 0;
+        background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+        opacity: 0.25;
+      }
+    }
+
+    & ~ .calendar-day {
+      background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+      opacity: 0.25;
+      &:hover {
+        position: relative;
+
+        &:before {
+          position: absolute;
+          display: block;
+          content: "";
+          height: 40px;
+          top: 0;
+          right: 0;
+          left: 0;
+          background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+          opacity: 0.25;
+        }
+      }
+    }
+  }
+
+  &_begin-point {
+    font-family: $labelTextFont;
+    font-size: $labelTextFontSize;
+    font-weight: $wigetTitleFontWeight;
+    color: #fff;
+    background: linear-gradient(180deg, $purple 0%, #8ba4f9 100%);
+    border-radius: 20px;
+  }
+  &_end {
+    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+    opacity: 0.25;
+
+    &.calendar-day_end-point {
+      opacity: 1;
+      position: relative;
+
+      &:before {
+        position: absolute;
+        display: block;
+        content: "";
+        width: 22px;
+        height: 40px;
+        top: 0;
+        left: 0;
+        background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+        opacity: 0.25;
+      }
+    }
+
+    &.calendar-day {
+      background: linear-gradient(180deg, $purple 0%, #8ba4f9 100%);
+    }
+
+    & ~ .calendar-day {
+      background: initial;
+      opacity: 1;
+
+      &:hover {
+        &:before {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &_end-point {
+    font-family: $labelTextFont;
+    font-size: $labelTextFontSize;
+    font-weight: $wigetTitleFontWeight;
+    color: #fff;
+    border-radius: 20px;
+  }
+
+  &.calendar-day_begin-point:hover,
+  &.calendar-day_end-point:hover{
+    cursor: default;
+  }
+}

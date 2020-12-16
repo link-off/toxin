@@ -1,0 +1,66 @@
+.expandable-checkbox-list {
+  position: relative;
+  user-select: none;
+  width: 100%;
+
+  &__trigger {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    height: 44px;
+    width: 100%;
+    font-family: $bodyTextFont;
+    font-size: $bodyTextFontSize;
+    color: $dark-75;
+  }
+
+  &__name {
+    font-family: $labelTextFont;
+    font-weight: $wigetTitleFontWeight;
+    font-size: $labelTextFontSize;
+    text-transform: uppercase;
+    color: $dark-100;
+  }
+
+  &__options {
+    display: none;
+    background: #fff;
+    transition: all 0.5s;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 1;
+    padding-top: 3px;
+  }
+
+  &__arrow {
+    position: relative;
+    height: 44px;
+    width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      opacity: 0.5;
+    }
+
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+
+  &_open &__options {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+  }
+
+  &_open &__arrow svg {
+    opacity: 0.75;
+    transform: rotate(180deg);
+  }
+}

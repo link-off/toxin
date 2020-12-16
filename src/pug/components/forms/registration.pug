@@ -1,0 +1,27 @@
+mixin registration(options)
+  -
+    var componentClassName = 'registration'
+    componentClassName += options && options.className ? ' ' + options.className : ''
+  div(class= componentClassName)
+    h1.registration__name Регистрация аккаунта
+    .margin-t-20
+      +text-field({placeholder: 'имя'})
+      .margin-t-10
+      +text-field({placeholder: 'фамилия'})
+    .margin-t-10
+      +group-wrapper({className: 'registration__radio-wrapper'})
+        +radio({value: {id: 'radio_buttons_0_1', name: 'мужчина', isChecked: true}})
+        +radio({value: {id: 'radio_buttons_0_1', name: 'женщина', isChecked: false}})
+    +field-wrapper({className: 'margin-t-20', title: 'дата рождения'})
+      +masked-text-field({placeholder: 'дд.мм.гггг'})
+    +field-wrapper({className: 'margin-t-20', title: 'данные для входа в сервис'})
+      +text-field({placeholder: 'email'})
+      .margin-t-10
+        +text-field({placeholder: 'пароль'})
+    .margin-t-10  
+      +toggle({value: {id: 'toggle_buttons_0_1', name: 'получать спецпредложения', isChecked: false}})
+    .margin-t-20
+      +button({value: 'перейти к оплате', type: 'arrowed'}) 
+    +group-wrapper({className: 'registration__actions-wrapper margin-t-30'})
+      a(href='#').registration__text Уже есть аккаунт на Toxin   
+      +button({value: 'войти', type: 'outline'})  

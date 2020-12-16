@@ -1,0 +1,25 @@
+mixin search-room(options)
+  -
+    var componentClassName = 'search-room'
+    componentClassName += options && options.className ? ' ' + options.className : ''
+  div(class= componentClassName)
+    h1.search-room__name Найдём номера под ваши пожелания
+    +group-wrapper({className: 'margin-t-20'})
+      +field-wrapper({title: 'прибытие'})
+        +date-dropdown({isOpen: options && options.isOpenDestination, placeholder: options && options.placeholderDestination || 'дд.мм.гггг'})  
+      +field-wrapper({title: 'выезд'})
+        +date-dropdown({isOpen: false, placeholder:  options && options.placeholderDeparture || 'дд.мм.гггг'})  
+    +field-wrapper({className: 'margin-t-20', title: 'гости', description: ''})
+      +dropdown({
+        isOpen: options && options.isOpenGuests, 
+        isShowActions: true,
+        isClearable: true, 
+        placeholder: options && options.placeholderGuests || 'Сколько гостей',
+        values: [
+          {id: 1, name: 'взрослые', count: 2}, 
+          {id: 2, name: 'дети', count: 1}, 
+          {id: 3, name: 'младенцы', count: 0}
+        ]
+      }) 
+    .margin-t-30      
+      +button({value: 'подобрать номер', type: 'arrowed'})    

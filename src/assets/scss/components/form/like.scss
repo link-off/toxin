@@ -1,0 +1,65 @@
+.like {
+  display: inline-flex;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid $dark-25;
+  border-radius: 10px;
+  height: 20px;
+  width: 40px;
+  background-color: #ffffff;
+
+  & + & {
+    margin-left: 10px;
+  }
+
+  svg {
+    opacity: 0;
+    width: 11px;
+    height: 11px;
+    position: absolute;
+    top: 50%;
+    margin-top: -5px;
+    left: 5px;
+  }
+
+  &__count {
+    font-family: $bodyTextFont;
+    font-weight: $bodyTextFontFontWeight;
+    font-size: 10px;
+    color: $dark-25;
+    position: absolute;
+    top: 50%;
+    margin-top: -6px;
+    right: 8px;
+  }
+
+  &_liked {
+    border: 1px solid transparent;
+    background-clip: padding-box;
+  }
+
+  &_liked::after {
+    position: absolute;
+    top: -1px;
+    bottom: -1px;
+    left: -1px;
+    right: -1px;
+    background: linear-gradient(#bc9cff, #8ba4f9);
+    content: "";
+    z-index: -1;
+    border-radius: 10px;
+  }
+
+  &_liked &__count {
+    color: $purple;
+  }
+
+  &__button &_enabled {
+    opacity: 1;
+  }
+
+  &_liked &__button &_disabled {
+    opacity: 1;
+  }
+}

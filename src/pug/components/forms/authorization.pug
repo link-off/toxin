@@ -1,0 +1,15 @@
+mixin authorization(options)
+  -
+    var componentClassName = 'authorization'
+    componentClassName += options && options.className ? ' ' + options.className : ''
+  div(class= componentClassName)
+    h1.authorization__name Войти
+    .margin-t-20
+      +text-field({placeholder: 'email'})
+      .margin-t-10
+      +text-field({placeholder: 'пароль'})
+    .margin-t-20  
+      +button({value: 'войти', type: 'arrowed'}) 
+    +group-wrapper({className: 'authorization__wrapper margin-t-30'})
+      a(href='#').authorization__text Нет аккаунта на Toxin?   
+      +button({value: 'создать', type: 'outline'})  
