@@ -1,0 +1,42 @@
+.landing-page {
+  &__image {
+    height: 830px;
+    background-image: url(./../img/background.jpg);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-color: #e5e5e5;
+    
+    @include media(953) {
+      height: 500px;
+      background-position: center 42%;
+    }
+  }
+
+  &__image-wrapper {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    flex-direction: column;
+  }
+
+  &__search-room {
+    width: 380px;
+
+    @include media(953) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &__text {
+
+    @include t-body-0();
+    line-height: $bodyTextFontLineHeight;
+    color: $dark-75;
+    letter-spacing: -0.01rem;
+    align-self: flex-end;
+    width: 294px;
+    height: 68px;
+    text-align: right;
+  }
+}

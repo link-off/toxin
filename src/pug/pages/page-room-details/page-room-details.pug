@@ -1,0 +1,98 @@
+extends ../../components/layout/layout
+
+include ../../components/logo/logo
+include ../../components/navigation/navigation
+include ../../components/header/header
+include ../../components/footer/footer
+include ../../components/subscription-text-field/subscription-text-field
+include ../../components/copyright/copyright
+include ../../components/social-icon/social-icon
+include ../../components/section/section
+include ../../components/images/images
+include ../../components/diagram/diagram
+include ../../components/group-wrapper/group-wrapper
+include ../../components/field-wrapper/field-wrapper
+include ../../components/dropdown/dropdown
+include ../../components/date-dropdown/date-dropdown
+include ../../components/button/button
+include ../../components/like/like
+include ../../components/forms/search-room/search-room
+include ../../components/advantages-block/advantages-block
+include ../../components/bullet-list/bullet-list
+include ../../components/comment/comment
+include ../../components/card-header/card-header
+include ../../components/forms/reservation/reservation
+
+block variables
+  - var title = 'Room details';
+  - var description = 'Room details';
+  - var pageClass = 'page-room-details';
+
+block content
+  +section({isShadow: true})
+    +header({isNotAuth: true, isAuth: false, user: 'юлий цезарь', isHomePage: true})   
+  +section({isCentered: true})
+    +images({images: [ 
+      {alt: 'hotel room', src: '../../../assets/img/room888-details1.jpg'},
+      {alt: 'hotel room', src: '../../../assets/img/room888-details2.jpg'},
+      {alt: 'hotel room', src: '../../../assets/img/room888-details3.jpg'},
+      ]})
+  +section({className: `${pageClass}__border padding-b-70`})
+    div(class = `${pageClass}__container`)
+      div
+        div(class = `${pageClass}__wrapper`)
+          div
+            h2(class = 'margin-b-20') Сведения о номере
+            +advantages-block({title: 'Комфорт', imgType: 'emotion', description: 'Шумопоглощающие стены'})
+            +advantages-block({title: 'Удобство', imgType: 'location', description: 'Окно в каждой из спален'}) 
+            +advantages-block({title: 'Уют', imgType: 'comfort', description: 'Номер оснащён камином'}) 
+          div
+            h2(class = 'margin-b-20') Впечатления от номера
+            div(class = `${pageClass}__diagram-wrapper`)
+              +diagram({data: [{
+                label: 'Великолепно',
+                count: 130
+              }, {
+                label: 'Хорошо',
+                count: 65
+              }, {
+                label: 'Удовлетворительно',
+                count: 65
+              }, {
+                label: 'Разочарован',
+                count: 0
+              }], total: 260})
+        div(class= 'margin-t-30')
+          +field-wrapper({isHead: true, title: 'Отзывы посетителей номера', description: '2 отзыва'})
+            +comment({
+              className: 'margin-t-20',
+              isLiked: true,
+              name: 'Мурад Сарафанов',
+              date: '5 дней назад', 
+              text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
+              image: {alt: 'avatar', src: '../../../assets/img/avatar.png'}
+              }) 
+            +comment({
+              isLiked: false,
+              count: 2,
+              name: 'Патрисия Стёклышкова', 
+              date: 'Неделю назад', 
+              text: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент',
+              image: {alt: 'avatar', src: '../../../assets/img/avatar2.png'}
+              }) 
+        div(class = `${pageClass}__wrapper`)
+          div(class = 'margin-t-30')
+            h2(class = `${pageClass}__head-wrapper margin-b-20`) Правила
+            +bullet-list({
+              list: [
+                'Нельзя с питомцами',
+                'Без вечеринок и мероприятий',
+                'Время прибытия — после 13:00, а выезд до 12:00']})  
+          div(class = 'margin-t-30')
+            h2(class = 'margin-b-20') Отмена
+            p Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+      +reservation({className: '', price: '9 990', discount: '2 179', fee: 0, additionalServices: 300})
+  +section()
+    +footer()
+  +section({isLine: true, isShadow: true})  
+    +copyright()  

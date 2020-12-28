@@ -1,0 +1,78 @@
+.reservation {
+  padding: 40px 29px 30px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  height: 511px;
+
+  &__price-list {
+
+    @include t-body-0();
+    line-height: $elementLineHeight;
+    color: $dark-75;
+
+    & li {
+      display: grid;
+      grid-template-columns: auto 20px 74px;
+      column-gap: 5px;
+      min-height: 24px;
+
+      & > *:last-child {
+        text-align: right;
+      }
+    }
+  }
+
+  &__price-list &__total {
+        color: $dark-100;
+        font-family: $wigetTitleFont;
+        font-weight: $wigetTitleFontWeight;
+        font-size: $insideWigetsFontSize;
+        line-height: $bodyTextFontLineHeight;
+        text-transform: capitalize;
+        display: flex;
+        justify-content: space-between;
+  }
+
+  &__icon {
+    display: inline-block;
+    border: 1px solid $dark-25;
+    box-sizing: border-box;
+    color: $dark-25;
+    font-family: $labelTextFont;
+    font-weight: $wigetTitleFontWeight;
+    font-size: $labelTextFontSize;
+    line-height: $labelTextFontLineHeight;
+    height: 20px;
+    width: 20px;
+    border-radius: 22px;
+    cursor: pointer;
+    text-align: center;
+    padding-top: 2px;
+  }
+
+  &__total &__description {
+    position: relative;
+    flex: 1;
+
+    &:before {
+      display: block;
+      content: "";
+      position: absolute;
+      height: 1px;
+      left: 5px;
+      right: 5px;
+      bottom: 4px;
+      color: $dark-25;
+      border-bottom: 1px dotted;
+    }
+
+    span {
+      background: #fff;
+      display: inline-block;
+      position: relative;
+      padding-right: 5px;
+    }
+  }
+}

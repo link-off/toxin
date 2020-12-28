@@ -1,0 +1,54 @@
+.pagination {
+  margin-bottom: 10px;
+  padding-top: 13px;
+
+  &__row {
+    display: flex;
+  }
+
+  &__page-current {
+    color: $dark-50;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    padding-top: 13px;
+    background: linear-gradient(180deg, $purple 0%, #8ba4f9 100%);
+    color: #fff;
+    border-radius: 22px;
+
+    @include t-label();
+  }
+
+  &__page {
+    color: $dark-50;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    padding-top: 13px;
+    border-radius: 22px;
+    cursor: pointer;
+
+    @include t-body();
+  }
+
+  &__arrow {
+    color: #fff;
+    background: linear-gradient(180deg, $green 0%, #66d2ea 100%);
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    padding-top: 13px;
+    border-radius: 22px;
+    cursor: pointer;
+    
+    @include t-label();
+  }
+
+  &__description {
+
+    @include t-body-0();
+    color: $dark-75;
+    padding-left: 6px;
+    padding-top: 12px;
+  }
+}

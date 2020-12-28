@@ -1,0 +1,33 @@
+extends ../../components/layout-guide/layout-guide
+
+include ../../components/logo/logo
+include ../../components/navigation/navigation
+include ../../components/header/header
+include ../../components/footer/footer
+include ../../components/copyright/copyright
+include ../../components/section/section
+include ../../components/subscription-text-field/subscription-text-field
+include ../../components/button/button
+include ../../components/social-icon/social-icon
+
+block variables
+  - var title = 'Headers&Footers';
+  - var description = 'Headers&Footers Modules';
+  - var pageClass = 'guide-headers-footers';
+  - var pageLogoClass = 'guide-common__logo';
+
+block content
+  div(class = `${pageClass}__container margin-t-30`)
+    +logo({isGrey: true, className: pageLogoClass})
+  +section({className: 'margin-t-40', isShadow: true})
+    +header({isNotAuth: true, isAuth: false, user: 'юлий цезарь'})
+  +section({className: 'margin-t-40', isShadow: true})
+    +header({isNotAuth: false, isAuth: true, user: 'юлий цезарь'})
+  +section({className: 'margin-t-40'})
+    +footer()
+  +section({isLine: true, isShadow: true})  
+    +copyright()
+  +section({className: `${pageClass}__mobile padding-t-20`, isTransparent: true})
+    +footer({isMobile: true})  
+  +section({className: `${pageClass}__mobile padding-t-20 padding-b-120`, isTransparent: true})  
+    +copyright({isMobile: true})

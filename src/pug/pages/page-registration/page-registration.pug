@@ -1,0 +1,33 @@
+extends ../../components/layout/layout
+
+include ../../components/logo/logo
+include ../../components/navigation/navigation
+include ../../components/header/header
+include ../../components/footer/footer
+include ../../components/subscription-text-field/subscription-text-field
+include ../../components/copyright/copyright
+include ../../components/social-icon/social-icon
+include ../../components/section/section
+include ../../components/group-wrapper/group-wrapper
+include ../../components/field-wrapper/field-wrapper
+include ../../components/button/button
+include ../../components/forms/registration/registration
+include ../../components/text-field/text-field
+include ../../components/radio/radio
+include ../../components/masked-text-field/masked-text-field
+include ../../components/toggle/toggle
+
+block variables
+  - var title = 'Page Registration';
+  - var description = 'page-registration';
+  - var pageClass = 'page-registration';
+
+block content
+  +section({isShadow: true})
+    +header({isNotAuth: true, isAuth: false, user: 'юлий цезарь', isHomePage: true})  
+  +section({className: `${pageClass}__image`, wrapperClassName: `${pageClass}__image-wrapper`})
+    +registration({className: `${pageClass}__registration-form margin-t-20`})
+  +section()
+    +footer()
+  +section({isLine: true, isShadow: true})  
+    +copyright()  

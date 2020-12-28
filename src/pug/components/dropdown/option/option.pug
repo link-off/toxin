@@ -1,0 +1,7 @@
+include ../counter/counter
+
+mixin option(options)
+  .option(data-value=options.value.id)
+    .option__name= options.value.name
+    div
+      +counter({value: options.value.count})

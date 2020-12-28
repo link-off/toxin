@@ -1,0 +1,32 @@
+extends ../../components/layout/layout
+
+include ../../components/logo/logo
+include ../../components/navigation/navigation
+include ../../components/header/header
+include ../../components/footer/footer
+include ../../components/subscription-text-field/subscription-text-field
+include ../../components/copyright/copyright
+include ../../components/social-icon/social-icon
+include ../../components/section/section
+include ../../components/group-wrapper/group-wrapper
+include ../../components/field-wrapper/field-wrapper
+include ../../components/dropdown/dropdown
+include ../../components/date-dropdown/date-dropdown
+include ../../components/button/button
+include ../../components/forms/search-room/search-room
+
+block variables
+  - var title = 'Landing Page Dates Dropdown';
+  - var description = 'Landing Page Dates Dropdown';
+  - var pageClass = 'landing-page-dates-dropdown';
+
+block content
+  +section({isShadow: true})
+    +header({isNotAuth: true, isAuth: false, user: 'юлий цезарь', isHomePage: true})  
+  +section({className: `${pageClass}__image`, wrapperClassName: `${pageClass}__image-wrapper`})
+    +search-room({className: `${pageClass}__search-room margin-t-70`, isOpenDestination: true, placeholderDestination: '19.08.2019', placeholderDeparture: '23.08.2019'})
+    div(class = `${pageClass}__text`) Лучшие номера для вашей работы, отдыха и просто вдохновения
+  +section()
+    +footer()
+  +section({isLine: true, isShadow: true})  
+    +copyright()  

@@ -1,0 +1,21 @@
+.calendar-content {
+  display: flex;
+  flex-direction: column;
+
+  &__week-day {
+    
+    @include t-label();
+    width: 40px;
+    height: 40px;
+    color: $purple;
+    text-transform: capitalize;
+    text-align: center;
+    padding-top: 13px;
+    line-height: 10px;
+  }
+
+  &__col {
+    display: grid;
+    grid-template-columns: repeat(7, 40px);
+  }
+}

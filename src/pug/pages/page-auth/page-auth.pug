@@ -1,0 +1,31 @@
+extends ../../components/layout/layout
+
+include ../../components/logo/logo
+include ../../components/navigation/navigation
+include ../../components/header/header
+include ../../components/footer/footer
+include ../../components/subscription-text-field/subscription-text-field
+include ../../components/copyright/copyright
+include ../../components/social-icon/social-icon
+include ../../components/section/section
+include ../../components/group-wrapper/group-wrapper
+include ../../components/field-wrapper/field-wrapper
+include ../../components/button/button
+include ../../components/forms/authorization/authorization
+include ../../components/text-field/text-field
+include ../../components/masked-text-field/masked-text-field
+
+block variables
+  - var title = 'Page Authorization';
+  - var description = 'page-auth';
+  - var pageClass = 'page-auth';
+
+block content
+  +section({isShadow: true})
+    +header({isNotAuth: true, isAuth: false, user: 'юлий цезарь', isHomePage: true})  
+  +section({className: `${pageClass}__image`, wrapperClassName: `${pageClass}__image-wrapper`})
+    +authorization({className: `${pageClass}__auth-form`})
+  +section()
+    +footer()
+  +section({isLine: true, isShadow: true})  
+    +copyright()  

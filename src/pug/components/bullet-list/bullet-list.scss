@@ -1,0 +1,22 @@
+.bullet-list {
+  &__wrapper {
+    display: flex;
+    margin-top: 5px;
+
+    & + & {
+      margin-top: 7px;
+    }
+  }
+  &__bullet {
+
+    @include t-body-0();
+    line-height: $bodyTextFontLineHeight;
+    color: $dark-75;
+    padding-left: 10px;
+    padding-top: 3px;
+  }
+
+  &__bullet-point {
+    padding-top: 4px;
+  }
+}

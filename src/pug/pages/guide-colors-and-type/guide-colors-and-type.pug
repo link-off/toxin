@@ -1,0 +1,34 @@
+extends ../../components/layout-guide/layout-guide
+
+include ../../components/logo/logo
+include ../../components/guide-color/guide-color
+include ../../components/guide-type/guide-type
+
+block variables
+  - var title = 'Colors&Type';
+  - var description = 'Description for Colors&Type';
+  - var pageClass = 'guide-colors-and-type';
+  - var pageLogoClass = 'guide-common__logo';
+
+block content
+  .margin-t-20-half
+    +logo({isGrey: true, className: pageLogoClass})
+  section(class= `${pageClass}__container`)
+    div 
+      +guide-color({title: 'Dark Shade 100%', colorType: 'dark-100', description: '#1F2041'})
+      +guide-color({title: 'Dark Shade 75%', colorType: 'dark-75', description: '#1F2041'})
+      +guide-color({title: 'Dark Shade 50%', colorType: 'dark-50', description: '#1F2041'})
+      +guide-color({title: 'Dark Shade 25%', colorType: 'dark-25', description: '#1F2041'})
+      +guide-color({title: 'Dark Shade 5%', colorType: 'dark-5', description: '#1F2041'})
+      +guide-color({title: 'Purple', colorType: 'purple', description: '#DC9CFF'})
+      +guide-color({title: 'Green', colorType: 'green', description: '#6FCF97'})
+    div 
+      +guide-type({description: 'This one is the sub-section or widget title', titleType: 'h1'})
+      +guide-type({description: 'Next one is the item title inside widgets', titleType: 'h2'})
+      +guide-type({description: 'THIS IS LABEL OR CTA TEXT', titleType: 'h3'})
+      +guide-type({description: 'This is the body text which is used for most of the design, like paragraphs, lists, etc.', titleType: 'body'})
+
+
+
+
+    
