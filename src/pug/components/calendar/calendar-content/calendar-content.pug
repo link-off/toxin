@@ -1,4 +1,4 @@
-mixin calendar-content(options)
+mixin calendar-content({items}= {})
   .calendar-content
     .calendar-content__col
       .calendar-content__week-day= 'пн'
@@ -9,8 +9,16 @@ mixin calendar-content(options)
       .calendar-content__week-day= 'сб'
       .calendar-content__week-day= 'вс'
     .calendar-content__col
-      each item in options.items
-        +calendar-day({day: item})
+      each item in items
+        +calendar-day({
+          isOther: item.isOther, 
+          isCurrent: item.isCurrent,
+          isBegin: item.isBegin, 
+          isBeginPoint: item.isBeginPoint, 
+          isEnd: item.isEnd, 
+          isEndPoint: item.isEndPoint, 
+          value: item.value,
+          })
       
                             
       

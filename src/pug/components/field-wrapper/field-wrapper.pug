@@ -1,18 +1,18 @@
-mixin field-wrapper(options)
+mixin field-wrapper({className, isHeadIndent= false, isHead= false, title, description}= {})
   -
     var baseClassName = 'field-wrapper'
     var componentClassName = baseClassName
-    componentClassName += options.className ? ' ' + options.className : ''
+    componentClassName += className ? ' ' + className : ''
     var contentClassName = `${baseClassName}__content`
-    contentClassName += options.isHeadIndent ? ` ${contentClassName}_offset` : ''
+    contentClassName += isHeadIndent ? ` ${contentClassName}_offset` : ''
     var titleClassName = `${baseClassName}__title` 
-    titleClassName += options.isHead ? ` ${titleClassName}_headline` : ''
+    titleClassName += isHead ? ` ${titleClassName}_headline` : ''
     var descriptionClassName = `${baseClassName}__description` 
-    descriptionClassName += options.isHead ? ` ${descriptionClassName}_headline` : ''
+    descriptionClassName += isHead ? ` ${descriptionClassName}_headline` : ''
   div(class= componentClassName)
     .field-wrapper__head
-      div(class= titleClassName)= options.title
-      div(class= descriptionClassName)= options.description
+      div(class= titleClassName)= title
+      div(class= descriptionClassName)= description
     if block
       div(class= contentClassName)
         block

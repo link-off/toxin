@@ -1,7 +1,7 @@
-mixin toggle(options)
+mixin toggle({name, id, isChecked= false}= {})
   label.toggle
-    .toggle__name= options.value.name
-    input.toggle__input(type='checkbox' name=options.value.id checked=options.value.isChecked)
+    .toggle__name= name
+    input.toggle__input(type='checkbox' name= id checked= isChecked)
     span.toggle__togglemark
       svg.toggle__enabled(width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg')
         rect(width='12' height='12' rx='6' fill='url(#radio_svg)')

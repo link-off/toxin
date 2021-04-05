@@ -8,11 +8,10 @@ block variables
   - var title = 'Colors&Type';
   - var description = 'Description for Colors&Type';
   - var pageClass = 'guide-colors-and-type';
-  - var pageLogoClass = 'guide-common__logo';
 
 block content
   .margin-t-20-half
-    +logo({isGrey: true, className: pageLogoClass})
+    +logo({isGrey: true, className: 'guide-common__logo'})
   section(class= `${pageClass}__container`)
     div 
       +guide-color({title: 'Dark Shade 100%', colorType: 'dark-100', description: '#1F2041'})

@@ -1,6 +1,6 @@
-mixin footer(options)
+mixin footer({isMobile= false}= {})
   -
-    var componentClassName = options && options.isMobile ? 'footer footer_mobile' : 'footer'
+    var componentClassName = isMobile ? 'footer footer_mobile' : 'footer'
   div(class = componentClassName)
     .footer__logo
       +logo()

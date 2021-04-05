@@ -1,9 +1,9 @@
-mixin advantages-block(options)
+mixin advantages-block({imgType, title, description}= {})
   -
     var asideClassName = 'advantages-block__aside'
-    asideClassName += options.imgType ? ' advantages-block-' + options.imgType : ''
+    asideClassName += imgType ? ' advantages-block-' + imgType : ''
   .advantages-block
     div(class = asideClassName)
     .advantages-block__content
-       .advantages-block__title= options.title
-       .advantages-block__description= options.description
+       .advantages-block__title= title
+       .advantages-block__description= description

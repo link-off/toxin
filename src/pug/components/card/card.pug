@@ -1,21 +1,21 @@
 include ../card-slider/card-slider
 include ../card-header/card-header
 
-mixin card(options)
+mixin card({className, isActive= false, isLux= false, images, number, rate, feedback}= {})
   -
     var componentClassName = 'card'
-    componentClassName += options.className ? ' ' + options.className : ''
+    componentClassName += className ? ' ' + className : ''
   div(class= componentClassName)
-    +card-slider({isActive: options && options.isActive, images: options.images})
+    +card-slider({isActive: isActive, images: images})
     .card__container
       +card-header({
-        className: '', number: options && options.number || '888', 
-        isLux: options && options.isLux, 
-        price: options && options.price || 9990})
+        className: '', number: number || '888', 
+        isLux: isLux, 
+        price: price || 9990})
       .card__line.margin-t-10.margin-b-10
       .card__rating
-        +rate({count: options && options.rate || 5})
+        +rate({count: rate || 5})
         .card__feedback-block
-          span.card__feedback= options.feedback
+          span.card__feedback= feedback
           span.card__feedback-text= 'Отзывов'
       

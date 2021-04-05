@@ -1,7 +1,7 @@
-mixin group-wrapper(options) 
+mixin group-wrapper({className}= {}) 
   -
     var componentClassName = 'group-wrapper'
-    componentClassName += (options && options.className) ? ' ' + options.className : ''
+    componentClassName += className ? ' ' + className : ''
   if block
   div(class= componentClassName)
     block 

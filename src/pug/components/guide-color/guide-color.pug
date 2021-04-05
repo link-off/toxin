@@ -1,9 +1,9 @@
-mixin guide-color(options)
+mixin guide-color({colorType, title, description}= {})
   -
     var asideClassName = 'guide-color__aside'
-    asideClassName += options.colorType ? ' guide-color-' + options.colorType : ''
+    asideClassName += colorType ? ' guide-color-' + colorType : ''
   .guide-color
     div(class = asideClassName)
     .guide-color__content
-      .guide-color__title= options.title
-      .guide-color__description= options.description
+      .guide-color__title= title
+      .guide-color__description= description

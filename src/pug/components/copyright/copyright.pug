@@ -1,6 +1,6 @@
-mixin copyright(options)
+mixin copyright({isMobile= false}= {})
   -
-    var compomentClassName = options && options.isMobile ? 'copyright copyright_mobile' : 'copyright'
+    var compomentClassName = isMobile ? 'copyright copyright_mobile' : 'copyright'
   div(class = compomentClassName)
     .copyright__text Copyright © 2018 Toxin отель. Все права защищены.
     .copyright__icons

@@ -2,11 +2,11 @@ include calendar-day/calendar-day
 include calendar-head/calendar-head
 include calendar-content/calendar-content
 
-mixin calendar(options)
+mixin calendar({className, isOpen= false}= {})
   -
     var componentClassName = 'calendar'
-    componentClassName += options.isOpen ? ' ' + componentClassName + '-open': ''
-    componentClassName += options.className ? ' ' + options.className : ''
+    componentClassName += isOpen ? ' ' + componentClassName + '-open': ''
+    componentClassName += className ? ` ${className}` : ''
   div(class= componentClassName)
     +calendar-head({value: 'август 2019'})
     +calendar-content({items: [{

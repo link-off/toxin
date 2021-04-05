@@ -23,11 +23,10 @@ block variables
   - var description = 'Authoriazation forms, calendar, hotel room cards';
   - var pageClass = 'guide-cards';
   - var registrationRadio = pageClass + '_offset-registration-radio'
-  - var pageLogoClass = 'guide-common__logo'
 
 block content
   .margin-t-30
-    +logo({isGrey: true, className: pageLogoClass})
+    +logo({isGrey: true, className: 'guide-common__logo'})
   div(class = `${pageClass}__container margin-t-30`)
     div
       +search-room({className: 'margin-b-40'})

@@ -14,14 +14,12 @@
   }
 
   &__name {
-    font-family: $labelTextFont;
-    font-weight: $wigetTitleFontWeight;
+    @include t-label();
     color: $dark-100;
   }
 
   &__value {
-    font-family: $bodyTextFont;
-    font-weight: $bodyTextFontFontWeight;
+    @include t-body();
     color: $dark-50;
   }
 

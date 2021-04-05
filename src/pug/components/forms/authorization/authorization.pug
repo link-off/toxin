@@ -1,7 +1,7 @@
-mixin authorization(options)
+mixin authorization({className}= {})
   -
     var componentClassName = 'authorization'
-    componentClassName += options && options.className ? ' ' + options.className : ''
+    componentClassName += className ? ` ${className}` : ''
   div(class= componentClassName)
     h1.authorization__name Войти
     .margin-t-20

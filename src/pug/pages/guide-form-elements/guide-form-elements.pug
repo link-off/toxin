@@ -27,11 +27,10 @@ block variables
   - var title = 'Form Elements';
   - var description = 'Forms, checkbox, radio, etc components';
   - var pageClass = 'guide-form-elements';
-  - var pageLogoClass = 'guide-common__logo'
 
 block content
   .margin-t-20-half
-    +logo({isGrey: true, className: pageLogoClass})
+    +logo({isGrey: true, className: 'guide-common__logo'})
   section(class= `${pageClass}__container`)
     div
       +field-wrapper({
@@ -139,12 +138,12 @@ block content
         +checkbox({id: 'checkbox_buttons_0_3', name: 'можно пригласить гостей (до 10 человек)', isChecked: true})
       +field-wrapper({className: `${pageClass}__radio-wrapper`, title: 'radio buttons'})
         +group-wrapper({className: `${pageClass}__offset-radio`})
-          +radio({value: {id: 'radio_buttons_0_1', name: 'мужчина', isChecked: true}})
-          +radio({value: {id: 'radio_buttons_0_1', name: 'женщина', isChecked: false}})
+          +radio({id: 'radio_buttons_0_1', name: 'мужчина', isChecked: true})
+          +radio({id: 'radio_buttons_0_1', name: 'женщина', isChecked: false})
       +field-wrapper({title: 'toggle'})
         div(class = `${pageClass}__offset-toggle`)
-          +toggle({value: {id: 'toggle_buttons_0_1', name: 'получать спецпредложения', isChecked: true}})
-          +toggle({value: {id: 'toggle_buttons_0_1', name: 'получать спецпредложения', isChecked: false}})  
+          +toggle({id: 'toggle_buttons_0_1', name: 'получать спецпредложения', isChecked: true})
+          +toggle({id: 'toggle_buttons_0_1', name: 'получать спецпредложения', isChecked: false})  
       +field-wrapper({className: `${pageClass}__offset-like ${pageClass}__offset-buttons`, title: 'like button'})
         +like({isLiked: false, count: 2})
         +like({isLiked: true, count: 12})

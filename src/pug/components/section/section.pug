@@ -1,16 +1,15 @@
-mixin section(options)
+mixin section({className, isLine=false, isShadow=false, isTransparent=false, isCentered=false, wrapperClassName} = {})
   -
     var baseClassName = 'section'
     var componentClassName = baseClassName
-    var wrapperClassName = `${baseClassName}__wrapper`
-    componentClassName += (options && options.className) ? ' ' + options.className : ''
-    componentClassName += options && options.isLine ? ` ${baseClassName}_line` : ''
-    componentClassName += options && options.isShadow ? ` ${baseClassName}_shadow` : ''
-    componentClassName += options && options.isTransparent ? ` ${baseClassName}_transparent` : ''
-    componentClassName += options && options.isShadow ? ` ${baseClassName}_shadow` : ''
-    componentClassName += options && options.isCentered ? ` ${baseClassName}_center` : ''
-    wrapperClassName += (options && options.wrapperClassName) ? ' ' + options.wrapperClassName : ''
+    var wrapClassName = `${baseClassName}__wrapper`
+    componentClassName += className ? ' ' + className : ''
+    componentClassName += isLine ? ` ${baseClassName}_line` : ''
+    componentClassName += isTransparent ? ` ${baseClassName}_transparent` : ''
+    componentClassName += isShadow ? ` ${baseClassName}_shadow` : ''
+    componentClassName += isCentered ? ` ${baseClassName}_center` : ''
+    wrapClassName += wrapClassName ? ' ' + wrapperClassName : ''
   if block
   section(class= componentClassName)
-    div(class= wrapperClassName)
+    div(class= wrapClassName)
       block 

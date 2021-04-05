@@ -1,11 +1,8 @@
-mixin diagram(options)
+mixin diagram({data= [], total, width= 120, height= 120}= {})
   -
     var partDivider = 0.008
-    var total = options.total
-    var w = options.width || 120
-    var h = options.height || 120
     var strokeWidth = 4
-    var r = w / 2 - strokeWidth / 2
+    var r = width / 2 - strokeWidth / 2
     var length = 2 * 3.14 * r
     var GRADIENTS = ['url(#diagram_yellow)', 'url(#diagram_green)', 'url(#diagram_blue)', 'url(#diagram_black)']
 
@@ -27,11 +24,11 @@ mixin diagram(options)
             stop(offset='1' stop-color='#3D4975')  
     figure
       .diagram__figure-content
-        svg.diagram__donut(width=w height=h viewBox=`0 0 ${ w } ${ h }` role='img')
+        svg.diagram__donut(width=width height=height viewBox=`0 0 ${ width } ${ height }` role='img')
           - var dashoffset = 0
           - var dashoffsetFirst = 0
-          for item, index in options.data
-            - var prevPart = index ? options.data[index - 1].count / total : 0;
+          for item, index in data
+            - var prevPart = index ? data[index - 1].count / total : 0;
             - var part = item.count / total;
             - var dasharray = `${part * length} ${(1 - part) * length}`
             - var dasharrayDivider = `${partDivider * length} ${(1 - partDivider) * length}`
@@ -49,13 +46,13 @@ mixin diagram(options)
                 cx='50%' cy='50%' r=r fill='transparent' stroke='#ffffff' stroke-width=strokeWidth transform=`translate(${w}, 0) scale(-1, 1)`
                 stroke-dasharray=dasharrayDivider
                 stroke-dashoffset=`${dashoffset + partDivider * length / 2}`)
-            if index == options.data.length - 1
+            if index == data.length - 1
               circle.diagram__segment(
                   cx='50%' cy='50%' r=r fill='transparent' stroke='#ffffff' stroke-width=strokeWidth transform=`translate(${w}, 0) scale(-1, 1)`
                   stroke-dasharray=dasharrayDivider
                   stroke-dashoffset=`${dashoffsetFirst + partDivider * length / 2}`)
         .diagram__chart-text
-          .diagram__chart-number= options.total
+          .diagram__chart-number= total
           .diagram__chart-label
             | ГОЛОСОВ
       figcaption.diagram__figure-key
