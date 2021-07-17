@@ -6,7 +6,7 @@ mixin dropdown({className, isOpen= false, placeholder, isShowActions= false, val
     var componentClassName = baseClassName
     componentClassName += isOpen ? ' ' + baseClassName + '_open': ''
     componentClassName += className ? ' ' + className : ''
-  div(class= componentClassName)
+  div(class= componentClassName data-dropdown data-dropdawn-is-open= isOpen)
     .dropdown__wrapper
       .dropdown__trigger
         .dropdown__placeholder= placeholder

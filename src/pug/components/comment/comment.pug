@@ -10,6 +10,6 @@ mixin comment({className, name, date, count, isLiked= false, text, image}= {})
       .comment__date= date
     div 
       .comment__like
-        +like({count: count || 12, isLiked: isLiked})
+        +like({count: count || 75, isLiked: isLiked})
     div
       .comment__text= text

@@ -1,0 +1,11 @@
+mixin slider({}={})
+  -
+    var componentClassName = 'slider'
+    componentClassName = className ? ' ' + className : ''
+  div(class= componentClassName)
+    div.slider__output
+      label(for='amount')
+        h3 Range Slider
+      input#amount(type='text' readonly)
+    div#slider-range
+
