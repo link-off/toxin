@@ -5,7 +5,7 @@ mixin date-dropdown({className, isOpen= false, placeholder}= {})
     var componentClassName = 'date-dropdown'
     componentClassName += isOpen ? ` ${componentClassName}` + '_open': ''
     componentClassName += className ? ` ${className}` : ''
-  div(class= componentClassName)
+  div(class= componentClassName data-date-dropdown data-date-dropdawn-is-open= isOpen)
     .date-dropdown__wrapper
       .date-dropdown__trigger
         .date-dropdown__placeholder= placeholder

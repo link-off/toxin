@@ -29,32 +29,14 @@
   &__placeholder {
     padding-bottom: 9px;
   }
-  &__options {
+ &__block {
     position: absolute;
     display: block;
     top: 100%;
-    left: 0;
-    right: 0;
-    border: 2px solid #394a6d;
-    border-top: 0;
-    background: #fff;
-    transition: all 0.5s;
-    opacity: 0;
+    min-width: 318px;
     visibility: hidden;
     pointer-events: none;
     z-index: 2;
-  }
-
-  &__option {
-    position: relative;
-    display: block;
-    padding: 0 22px 0 22px;
-    font-size: 22px;
-    font-weight: 300;
-    color: #3b3b3b;
-    line-height: 60px;
-    cursor: pointer;
-    transition: all 0.5s;
 
     &:hover {
       cursor: pointer;
@@ -81,11 +63,12 @@
       opacity: 0.75;
     }
   }
-
-  &_open &__options {
+  
+  &_open &__block {
     opacity: 1;
     visibility: visible;
     pointer-events: all;
+    padding-top: 6px;
   }
 
   &_open .arrow svg {
@@ -97,7 +80,6 @@
   }
 
   &__button {
-    
     @include t-button();
     text-transform: uppercase;
     color: $purple;
